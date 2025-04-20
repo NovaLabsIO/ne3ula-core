@@ -22,41 +22,41 @@
     <div id="notion-content">Loading NE3ULA content from Notion...</div>
   </main>
 
-  <!-- 🔌 Notion API Script -->
   <script>
-    const NOTION_TOKEN = "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";
     const PAGE_ID = "1cbef829271080a0ab57f3948be08da8";
+    const endpoint = `https://notion.ne3ula.com/?page=${PAGE_ID}`;
 
-   fetch(`https://notion.ne3ula.com/?page=1cbef829271080a0ab57f3948be08da8`), {
-      method: "GET",
-      headers: {
-        "Authorization": `Bearer ${NOTION_TOKEN}`,
-        "Notion-Version": "2022-06-28"
-      }
-    })
-    .then(res => res.json())
-    .then(data => {
-      const contentDiv = document.getElementById("notion-content");
-      data.results.forEach(block => {
-        if (block.type === "paragraph") {
-          const p = document.createElement("p");
-          p.textContent = block.paragraph.rich_text.map(text => text.plain_text).join("");
-          contentDiv.appendChild(p);
-        } else if (block.type === "heading_2") {
-          const h2 = document.createElement("h2");
-          h2.textContent = block.heading_2.rich_text.map(text => text.plain_text).join("");
-          contentDiv.appendChild(h2);
-        } else if (block.type === "heading_1") {
-          const h1 = document.createElement("h1");
-          h1.textContent = block.heading_1.rich_text.map(text => text.plain_text).join("");
-          contentDiv.appendChild(h1);
+    fetch(endpoint)
+      .then(res => res.json())
+      .then(data => {
+        const contentDiv = document.getElementById("notion-content");
+        if (!data.results || data.results.length === 0) {
+          contentDiv.innerHTML = "<p>No content found in Notion page.</p>";
+          return;
         }
+
+        data.results.forEach(block => {
+          if (block.type === "paragraph") {
+            const p = document.createElement("p");
+            p.textContent = block.paragraph.rich_text.map(t => t.plain_text).join("");
+            contentDiv.appendChild(p);
+          } else if (block.type === "heading_1") {
+            const h1 = document.createElement("h1");
+            h1.textContent = block.heading_1.rich_text.map(t => t.plain_text).join("");
+            contentDiv.appendChild(h1);
+          } else if (block.type === "heading_2") {
+            const h2 = document.createElement("h2");
+            h2.textContent = block.heading_2.rich_text.map(t => t.plain_text).join("");
+            contentDiv.appendChild(h2);
+          } else {
+            console.log("Unsupported block:", block.type);
+          }
+        });
+      })
+      .catch(err => {
+        console.error("Failed to load Notion content:", err);
+        document.getElementById("notion-content").innerHTML = "<p>Error loading Notion content.</p>";
       });
-    })
-    .catch(err => {
-      console.error("Failed to load Notion content:", err);
-      document.getElementById("notion-content").innerHTML = "<p>Failed to load content. Check console for details.</p>";
-    });
   </script>
 
 </body>
