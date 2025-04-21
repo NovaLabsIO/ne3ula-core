@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NE3ULA Debug View</title>
+  <style>
+    body {
+      background-color: #0a0a0a;
+      color: #f0f0f0;
+      font-family: sans-serif;
+      padding: 2rem;
+    }
+    h1, h2 {
+      color: #ffffff;
+    }
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 1em 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+    }
+    pre {
+      background: #1a1a1a;
+      color: #ccc;
+      padding: 1em;
+      overflow-x: auto;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌌 NE3ULA Debug View</h1>
+    <p>This is a debug viewer for your Notion content. Scroll down to inspect block data.</p>
+    <div id="notion-content">Loading content from Notion...</div>
+    <h2>🔍 Raw Data</h2>
+    <pre id="debug-log">Waiting for response...</pre>
+  </div>
+
+  <script>
+    const pageId = "1cbef829271080a0ab57f3948be08da8";
+
+    function extractText(richTextArray = []) {
+      return richTextArray.map(t => t?.plain_text || "").join("");
+    }
+
+    fetch("https://notion.ne3ula.com/?page=" + pageId)
+      .then(res => res.json())
+      .then(data => {
+        const contentDiv = document.getElementById("notion-content");
+        const debugDiv = document.getElementById("debug-log");
+        contentDiv.innerHTML = "";
+
+        console.log("Full Notion Response:", data);
+        debugDiv.textContent = JSON.stringify(data, null, 2);
+
+        if (!data.results || data.results.length === 0) {
+          contentDiv.innerHTML = "<p>No content blocks found.</p>";
+          return;
+        }
+
+        data.results.forEach(block => {
+          let el;
+          const type = block.type;
+
+          switch (type) {
+            case "paragraph":
+              el = document.createElement("p");
+              el.textContent = extractText(block.paragraph.rich_text);
+              break;
+            case "heading_1":
+              el = document.createElement("h1");
+              el.textContent = extractText(block.heading_1.rich_text);
+              break;
+            case "heading_2":
+              el = document.createElement("h2");
+              el.textContent = extractText(block.heading_2.rich_text);
+              break;
+            case "image":
+              el = document.createElement("img");
+              el.src = block.image.file?.url || block.image.external?.url || "";
+              break;
+            default:
+              el = document.createElement("p");
+              el.innerHTML = `<code>Unsupported block type: <b>${type}</b></code>`;
+          }
+
+          contentDiv.appendChild(el);
+        });
+      })
+      .catch(err => {
+        console.error("Fetch error:", err);
+        document.getElementById("notion-content").innerText = "⚠️ Failed to load content.";
+      });
+  </script>
+</body>
+</html>
