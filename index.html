@@ -1,65 +1,18 @@
-<!DOCTYPE html>
-<!-- v1.0.4 fix -->
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>NE3ULA</title>
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2299.77">
+  <style type="text/css">
+    body {background-color: #0a0a0a}
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; color: #ececec; -webkit-text-stroke: #ececec; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+  </style>
 </head>
 <body>
-
-  <header><h1>NE3ULA</h1></header>
-  <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="pages/about.html">About</a></li>
-      <li><a href="pages/pyramid.html">NE3ULA Pyramid</a></li>
-      <li><a href="pages/aid.html">Talk to AI.d</a></li>
-    </ul>
-  </nav>
-
-  <main>
-    <div id="notion-content">Loading NE3ULA content from Notion...</div>
-  </main>
-
- <script>
-const PAGE_ID = "1cbef829271080a0ab57f3948be08da8";
-
-fetch("https://notion.ne3ula.com/?page=1cbef829271080a0ab57f3948be08da8"), {
-  method: "GET"
-})
-  .then(res => res.json())
-  .then(data => {
-    const contentDiv = document.getElementById("notion-content");
-    if (!data.results || data.results.length === 0) {
-      contentDiv.innerHTML = "<p>No content found in Notion page.</p>";
-      return;
-    }
-
-    data.results.forEach(block => {
-      if (block.type === "paragraph") {
-        const p = document.createElement("p");
-        p.textContent = block.paragraph.rich_text.map(t => t.plain_text).join("");
-        contentDiv.appendChild(p);
-      } else if (block.type === "heading_1") {
-        const h1 = document.createElement("h1");
-        h1.textContent = block.heading_1.rich_text.map(t => t.plain_text).join("");
-        contentDiv.appendChild(h1);
-      } else if (block.type === "heading_2") {
-        const h2 = document.createElement("h2");
-        h2.textContent = block.heading_2.rich_text.map(t => t.plain_text).join("");
-        contentDiv.appendChild(h2);
-      } else {
-        console.log("Unsupported block:", block.type);
-      }
-    });
-  })
-  .catch(err => {
-    console.error("Failed to load Notion content:", err);
-    document.getElementById("notion-content").innerHTML = "<p>Error loading Notion content.</p>";
-  });
-</script>
-
+<p class="p1"><span class="s1"></span><br></p>
 </body>
 </html>
