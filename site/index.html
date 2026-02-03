@@ -6,6 +6,8 @@
   <title>NE3ULA</title>
   <meta name="description" content="Enter NE3ULA." />
   <style>
+.stage{position:fixed;inset:0;background:url(/assets/nebula-mark.png) center center / cover no-repeat;opacity:1;z-index:0;filter:drop-shadow(0 30px 160px rgba(255,255,255,.06));}
+
 .mark{width:min(820px,88vw);height:auto;display:block;margin:0 auto 26px;filter:drop-shadow(0 20px 80px rgba(255,255,255,.08));}
 
     html,body{height:100%;margin:0}
@@ -47,8 +49,9 @@
   </style>
 </head>
 <body>
-  <main class="wrap">
-    <img src="/assets/nebula-mark.png" alt="{..}" style="width:min(820px,88vw);height:auto;display:block;margin:0 auto 26px;">
+<div class="stage"></div>
+  <main class="wrap" style="position:relative;z-index:2;min-height:100vh;display:grid;place-items:end center;padding-bottom:18vh;">
+    
     <a href="/enter">ENTER {NE3ULA}</a>
     <div class="micro">Signal over noise</div>
   </main>
