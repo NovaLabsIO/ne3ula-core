@@ -9,22 +9,28 @@
 .footer-line .left,.footer-line .right{font:12px/1.2 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;letter-spacing:.38em;text-transform:uppercase;color:rgba(255,255,255,.55);text-shadow:0 2px 14px rgba(0,0,0,.65);} 
 
 
-.footer{
-  position:fixed;
-  left:0; right:0; bottom:0;
-  padding:28px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  pointer-events:none;
-  z-index:9999;
+.footer-line {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 28px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  padding: 0 40px;
+  pointer-events: none;
 }
-.footer .left, .footer .right{
-  font:12px/1.2 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
-  letter-spacing:.38em;
-  text-transform:uppercase;
-  color:rgba(255,255,255,.55);
-  text-shadow:0 2px 14px rgba(0,0,0,.65);
+
+.footer-left,
+.footer-right {
+  font: 12px/1.2 ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  letter-spacing: 0.38em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.65);
 }
 
 
@@ -92,9 +98,9 @@
   </div>
 <div class="corner-tagline" style="position:fixed;right:4vw;bottom:4vh;z-index:4;font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;letter-spacing:.38em;opacity:.45;text-transform:uppercase;pointer-events:none;">LIVE YOUR LEGEND</div>
 
-<div class="footer">
-  <div class="left">© NE3ULA</div>
-  <div class="right">LIVE YOUR LEGEND</div>
+<div class="footer-line">
+  <span class="footer-left">© NE3ULA</span>
+  <span class="footer-right">LIVE YOUR LEGEND</span>
 </div>
 
 
