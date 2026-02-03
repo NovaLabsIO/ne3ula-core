@@ -6,6 +6,8 @@
   <title>NE3ULA</title>
   <meta name="description" content="Enter NE3ULA." />
   <style>
+.stage{position:fixed;inset:0;background:url(/assets/nebula-mark.png) center center / cover no-repeat;opacity:1;z-index:0;filter:drop-shadow(0 30px 160px rgba(255,255,255,.06));}
+
 .mark{width:min(820px,88vw);height:auto;display:block;margin:0 auto 26px;filter:drop-shadow(0 20px 80px rgba(255,255,255,.08));}
 
     html,body{height:100%;margin:0}
@@ -44,24 +46,17 @@
       text-transform:uppercase;
       opacity:.6;
     }
-  .stage{
-position:fixed;
-inset:0;
-background:url(/assets/nebula-mark.png) center center / contain no-repeat;
-opacity:1;
-z-index:0;
-}
-
+  </style>
 </head>
 <body>
+<div class="stage"></div>
   <main class="wrap" style="position:fixed;inset:0;z-index:2;display:grid;place-items:end center;padding-bottom:8vh;">
 <div class="cta-stack" style="position:fixed;left:50%;bottom:8vh;transform:translateX(-50%);z-index:5;display:flex;flex-direction:column;align-items:center;gap:1.2vh;">
 <div class="tagline" style="margin-bottom:2.5vh;font:12px/1.4 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;letter-spacing:.38em;opacity:.55;text-transform:uppercase;"><div class="tagline" style="font:11px/1.4 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;letter-spacing:.38em;opacity:.5;text-transform:uppercase;margin-top:.6vh;">LIVE YOUR LEGEND</div></div>
-    <div class="stage"></div>
+    
     <a href="/enter" style="text-decoration:none;padding:14px 26px;border:1px solid rgba(255,255,255,.3);border-radius:14px;background:rgba(0,0,0,.35);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);letter-spacing:.32em;">ENTER</a>
     
   </div>
 </main>
-<div style="position:fixed;right:14px;bottom:12px;opacity:.25;font:12px/1 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;letter-spacing:.08em;z-index:9999;">build 8ddcf69</div>
 </body>
 </html>
