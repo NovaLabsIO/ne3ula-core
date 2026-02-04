@@ -128,3 +128,25 @@ p{
     background-position:center 30%;
   }
 }
+
+/* --- HOME background tuning (full-bleed, preserve focal center) --- */
+body[data-page="home"] .stage{
+  background-repeat:no-repeat;
+  background-size:cover;         /* full-bleed */
+  background-position:50% 35%;   /* aim up a bit so top/logo area survives */
+}
+
+/* Wider screens: center a touch more (avoid edge loss) */
+@media (min-width: 1100px){
+  body[data-page="home"] .stage{
+    background-position:50% 40%;
+  }
+}
+
+/* Mobile: use your mobile-specific image and aim higher */
+@media (max-width: 900px){
+  body[data-page="home"] .stage{
+    background-image:url("/assets/home/bg-home-mobile.png") !important;
+    background-position:50% 22%;
+  }
+}
