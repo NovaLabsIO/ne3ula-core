@@ -30,6 +30,18 @@ body.home .stage{
   }
 }
 
+/* TEMP: Home overlay disabled */
+body.home .stage{
+  background-size:cover !important;
+  background-position:center center !important;
+}
+body.home .wrap,
+body.home .card,
+body.home .nav,
+body.home .footer{
+  display:none !important;
+}
+
 .wrap{
   position:relative;
   z-index:2;
@@ -279,4 +291,3 @@ body[data-page="home"] .nav{
     grid-template-columns: 1fr;
   }
 }
-
