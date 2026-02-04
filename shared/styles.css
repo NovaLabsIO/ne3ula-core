@@ -40,6 +40,11 @@ body.home .stage{
   text-align:center;
 }
 
+body.home .wrap,
+body.home .footer{
+  z-index:2;
+}
+
 .card{
   max-width:980px;
   width:min(980px,92vw);
