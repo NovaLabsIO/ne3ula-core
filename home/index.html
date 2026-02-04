@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>HOME — NE3ULA</title>
+
+  <link rel="stylesheet" href="/shared/styles.css" />
+  <script src="/shared/app.js" defer></script>
+
+  <style>
+    .home-card{
+      padding:34px 28px;
+      text-align:left;
+    }
+    .home-title{
+      text-align:center;
+      margin-bottom:18px;
+    }
+    .home-title h1{
+      margin:0.3rem 0 0.35rem;
+      font-size:46px;
+      letter-spacing:.02em;
+    }
+    .home-title p{
+      margin:0 auto;
+      max-width:720px;
+      opacity:.9;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap:14px;
+      margin-top:22px;
+    }
+    @media (max-width: 860px){
+      .grid{ grid-template-columns: 1fr; }
+      .home-card{ padding:30px 22px; }
+      .home-title h1{ font-size:40px; }
+    }
+
+    .path{
+      position:relative;
+      display:block;
+      text-decoration:none;
+      color:inherit;
+      background: rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:18px;
+      padding:22px 20px 18px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      box-shadow: 0 20px 90px rgba(0,0,0,.45);
+      transition: transform .22s ease, border-color .22s ease, background .22s ease;
+      pointer-events:auto;
+      overflow:hidden;
+      min-height:152px;
+    }
+    .path:hover{
+      transform: translateY(-4px);
+      border-color: rgba(255,255,255,.28);
+      background: rgba(0,0,0,.30);
+    }
+
+    .path .k{
+      font:12px/1.2 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+      letter-spacing:.38em;
+      text-transform:uppercase;
+      color: rgba(255,255,255,.62);
+    }
+    .path .big{
+      margin-top:10px;
+      font-size:28px;
+      letter-spacing:.02em;
+      color: rgba(255,255,255,.93);
+    }
+    .path .desc{
+      margin-top:10px;
+      color: rgba(255,255,255,.62);
+      font-size:14px;
+      line-height:1.55;
+      max-height:0;
+      opacity:0;
+      transform: translateY(6px);
+      transition: max-height .28s ease, opacity .28s ease, transform .28s ease;
+      overflow:hidden;
+    }
+    .path:hover .desc{
+      max-height:120px;
+      opacity:1;
+      transform: translateY(0);
+    }
+
+    .arrow{
+      position:absolute;
+      right:16px;
+      top:16px;
+      width:36px;
+      height:36px;
+      border-radius:12px;
+      display:grid;
+      place-items:center;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(0,0,0,.18);
+      color: rgba(255,255,255,.75);
+    }
+    .path:hover .arrow{
+      border-color: rgba(255,255,255,.28);
+      color: rgba(255,255,255,.92);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="stage" style="background-image:url('/assets/home/bg-home.png')"></div>
+
+  <div class="wrap">
+    <div class="card home-card">
+      <div class="home-title">
+        <div class="kicker">NE3ULA</div>
+        <h1>Choose Your Path</h1>
+        <p>Each path reveals a different way to experience the NE3ULA — signal, myth, interface, and engine.</p>
+      </div>
+
+      <div class="grid">
+        <a class="path" href="/music">
+          <div class="arrow">↗</div>
+          <div class="k">MUSIC</div>
+          <div class="big">Signal</div>
+          <div class="desc">Releases, sets, and frequency. Follow the sound.</div>
+        </a>
+
+        <a class="path" href="/lore">
+          <div class="arrow">↗</div>
+          <div class="k">LORE</div>
+          <div class="big">Myth</div>
+          <div class="desc">The worldbuilding, symbols, and story threads behind the project.</div>
+        </a>
+
+        <a class="path" href="/axzio">
+          <div class="arrow">↗</div>
+          <div class="k">AXZIO</div>
+          <div class="big">Interface</div>
+          <div class="desc">Reflect → Create → Become. The guided system for transformation.</div>
+        </a>
+
+        <a class="path" href="/e3">
+          <div class="arrow">↗</div>
+          <div class="k">E3</div>
+          <div class="big">Engine</div>
+          <div class="desc">The underlying architecture: identity, tooling, and mechanics.</div>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span>© NE3ULA</span>
+    <span>LIVE YOUR LEGEND</span>
+  </div>
+
+</body>
+</html>
