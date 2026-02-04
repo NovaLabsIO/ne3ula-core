@@ -1,0 +1,112 @@
+:root{
+  --fg: rgba(255,255,255,.92);
+  --muted: rgba(255,255,255,.62);
+  --border: rgba(255,255,255,.14);
+  --glass: rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  color:var(--fg);
+  background:#05060a;
+}
+
+.stage{
+  position:fixed;inset:0;
+  background:center/cover no-repeat fixed;
+  z-index:0;
+}
+
+body.home .stage{
+  background-image:url("/assets/home/bg-home.png");
+}
+
+@media (max-width:768px){
+  body.home .stage{
+    background-image:url("/assets/home/bg-home-mobile.png");
+  }
+}
+
+.wrap{
+  position:relative;
+  z-index:2;
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding:8vh 6vw;
+  text-align:center;
+}
+
+.card{
+  max-width:980px;
+  width:min(980px,92vw);
+  background:var(--glass);
+  border:1px solid var(--border);
+  border-radius:22px;
+  padding:28px 26px;
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  box-shadow:0 28px 120px rgba(0,0,0,.55);
+}
+
+.kicker{
+  font:12px/1.2 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  letter-spacing:.38em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+h1{
+  margin:.7rem 0 .3rem;
+  font-size:42px;
+  letter-spacing:.02em;
+}
+
+p{
+  margin:.4rem 0 0;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.6;
+}
+
+.nav{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+
+.btn{
+  pointer-events:auto;
+  display:inline-block;
+  text-decoration:none;
+  color:var(--fg);
+  padding:12px 18px;
+  border-radius:14px;
+  background:rgba(0,0,0,.28);
+  border:1px solid rgba(255,255,255,.18);
+}
+
+.btn:hover{background:rgba(0,0,0,.38)}
+
+.footer{
+  position:fixed;
+  left:0;right:0;bottom:0;
+  z-index:2;
+  padding:18px 22px;
+  display:flex;
+  justify-content:space-between;
+  align-items:baseline;
+  pointer-events:none;
+}
+
+.footer span{
+  font:11px/1.2 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  letter-spacing:.38em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,.45);
+}
