@@ -215,3 +215,68 @@ body[data-page="home"] .nav{
   }
 }
 
+
+/* ===========================
+   HOME — background + overlay
+   Goal: NO CROP on desktop, better UI placement
+   =========================== */
+
+body[data-page="home"] .stage{
+  /* show the whole image */
+  background-size:contain !important;
+  background-position:50% 0% !important; /* top centered */
+  background-repeat:no-repeat !important;
+  background-color:#000 !important;      /* fill letterbox */
+  filter:none !important;                /* stop extra “zoom feel” */
+}
+
+/* Make the main overlay feel like a floating HUD instead of a blocker */
+body[data-page="home"] .wrap{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding: clamp(20px, 4vw, 56px);
+}
+
+/* If your UI uses .card (it does in the template), tune it */
+body[data-page="home"] .card{
+  width:min(980px, 92vw);
+  padding: clamp(18px, 2.4vw, 34px);
+  border-radius: 22px;
+  background: rgba(0,0,0,.32);            /* lighter = less blocking */
+  border: 1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 22px 80px rgba(0,0,0,.55);
+  transform: translateY(3vh);             /* aligns with background composition */
+}
+
+/* If your home has a 4-card grid area, tighten and align it */
+body[data-page="home"] .grid,
+body[data-page="home"] .nav{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+/* Mobile: use the mobile background + allow crop (mobile needs it) */
+@media (max-width: 900px){
+  body[data-page="home"] .stage{
+    background-image:url("/assets/home/bg-home-mobile.png") !important;
+    background-size:cover !important;
+    background-position:50% 20% !important;
+  }
+
+  body[data-page="home"] .card{
+    width: min(720px, 92vw);
+    transform: translateY(0);
+    background: rgba(0,0,0,.40);
+  }
+
+  body[data-page="home"] .grid,
+  body[data-page="home"] .nav{
+    grid-template-columns: 1fr;
+  }
+}
+
