@@ -115,3 +115,16 @@ p{
   text-transform:uppercase;
   color:rgba(255,255,255,.45);
 }
+
+/* HOME background scaling: desktop = show full art (no crop), mobile = immersive crop */
+.stage{
+  background-repeat:no-repeat;
+  background-position:center center;
+  background-size:contain; /* desktop: no cropping */
+}
+@media (max-width: 900px){
+  .stage{
+    background-size:cover; /* mobile: fill screen */
+    background-position:center 30%;
+  }
+}
