@@ -7,141 +7,38 @@
 
   <link rel="stylesheet" href="/shared/styles.css" />
   <script src="/shared/app.js" defer></script>
-
-  <style>
-    .home-card{
-      padding:34px 28px 30px;
-      text-align:left;
-      background:rgba(8,16,28,.28);
-      border-color:rgba(186,216,255,.2);
-    }
-    .home-title{
-      text-align:center;
-      margin-bottom:22px;
-    }
-    .home-title h1{
-      margin:0.35rem 0 0.4rem;
-      font-size:clamp(34px,5vw,50px);
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-weight:500;
-    }
-    .home-title p{
-      margin:0 auto;
-      max-width:720px;
-      opacity:.88;
-      font-size:clamp(15px,1.8vw,18px);
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns: repeat(2, minmax(0,1fr));
-      gap:16px;
-      margin-top:24px;
-    }
-    @media (max-width: 768px){
-      .grid{ grid-template-columns: 1fr; }
-      .home-card{ padding:30px 22px; }
-      .home-title h1{ font-size:34px; }
-    }
-
-    .path{
-      position:relative;
-      display:block;
-      text-decoration:none;
-      color:inherit;
-      background: rgba(0,0,0,.22);
-      border:1px solid rgba(255,255,255,.14);
-      border-radius:16px;
-      padding:24px 20px 22px;
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
-      box-shadow: 0 20px 90px rgba(0,0,0,.45);
-      transition: transform .22s ease, border-color .22s ease, background .22s ease, box-shadow .22s ease;
-      pointer-events:auto;
-      overflow:hidden;
-      min-height:168px;
-    }
-    .path:hover,
-    .path:focus-visible{
-      transform: translateY(-4px);
-      border-color: rgba(201,225,255,.46);
-      background: rgba(8,18,33,.4);
-      box-shadow: 0 22px 96px rgba(0,0,0,.52);
-      outline:none;
-    }
-
-    .path .k{
-      font:12px/1.2 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
-      letter-spacing:.38em;
-      text-transform:uppercase;
-      color: rgba(255,255,255,.62);
-    }
-    .path .big{
-      margin-top:12px;
-      font-size:34px;
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      color: rgba(255,255,255,.93);
-    }
-
-    .arrow{
-      position:absolute;
-      right:16px;
-      top:16px;
-      width:36px;
-      height:36px;
-      border-radius:12px;
-      display:grid;
-      place-items:center;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(0,0,0,.18);
-      color: rgba(255,255,255,.75);
-    }
-    .path:hover .arrow,
-    .path:focus-visible .arrow{
-      border-color: rgba(201,225,255,.46);
-      color: rgba(255,255,255,.92);
-    }
-  </style>
 </head>
 <body class="home" data-page="home">
 
   <div class="stage"></div>
 
-  <div class="wrap">
-    <div class="card home-card">
-      <div class="home-title">
-        <div class="kicker">NE3ULA</div>
-        <h1>CHOOSE YOUR PATH</h1>
-        <p>Each path reveals a different way to experience the NE3ULA.</p>
-      </div>
+  <div class="wrap home-hub">
+    <div class="home-header">
+      <div class="home-kicker">NE3ULA</div>
+      <h1>Choose Your Path</h1>
+      <p>Each path reveals a different way to experience the NE3ULA</p>
+    </div>
 
-      <div class="grid">
-        <a class="path" href="/music">
-          <div class="arrow">↗</div>
-          <div class="k">MUSIC</div>
-          <div class="big">SIGNAL</div>
-        </a>
+    <div class="home-grid">
+      <a class="home-card" href="/music">
+        <span class="home-card-label">MUSIC</span>
+        <span class="home-card-subtitle">Signal</span>
+      </a>
 
-        <a class="path" href="/lore">
-          <div class="arrow">↗</div>
-          <div class="k">LORE</div>
-          <div class="big">MYTH</div>
-        </a>
+      <a class="home-card" href="/lore">
+        <span class="home-card-label">LORE</span>
+        <span class="home-card-subtitle">Myth</span>
+      </a>
 
-        <a class="path" href="/axzio">
-          <div class="arrow">↗</div>
-          <div class="k">AXZIO</div>
-          <div class="big">INTERFACE</div>
-        </a>
+      <a class="home-card" href="/axzio">
+        <span class="home-card-label">AXZIO</span>
+        <span class="home-card-subtitle">Interface</span>
+      </a>
 
-        <a class="path" href="/e3">
-          <div class="arrow">↗</div>
-          <div class="k">E3</div>
-          <div class="big">ENGINE</div>
-        </a>
-      </div>
+      <a class="home-card" href="/e3">
+        <span class="home-card-label">E3</span>
+        <span class="home-card-subtitle">Engine</span>
+      </a>
     </div>
   </div>
 

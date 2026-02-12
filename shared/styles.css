@@ -30,17 +30,6 @@ body.home .stage{
   }
 }
 
-/* TEMP: Home overlay disabled */
-body.home .stage{
-  background-size:cover !important;
-  background-position:center center !important;
-}
-body.home .wrap,
-body.home .card,
-body.home .nav,
-body.home .footer{
-  display:none !important;
-}
 
 .wrap{
   position:relative;
@@ -224,6 +213,112 @@ body[data-page="home"] .nav{
   body[data-page="home"] .grid,
   body[data-page="home"] .nav{
     grid-template-columns: 1fr;
+  }
+}
+
+/* ===========================
+   HOME — 4-card hub (Option B)
+   =========================== */
+
+body.home .home-hub{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:26px;
+  padding: clamp(28px, 5vh, 64px) 6vw;
+  text-align:center;
+  transform: translateY(12vh);
+}
+
+body.home .home-header{
+  max-width: 820px;
+}
+
+body.home .home-kicker{
+  font:12px/1.2 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  letter-spacing:.46em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+body.home .home-header h1{
+  margin:.6rem 0 .35rem;
+  font-size:clamp(34px, 4.8vw, 54px);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  font-weight:500;
+}
+
+body.home .home-header p{
+  margin:0 auto;
+  max-width: 720px;
+  color:var(--muted);
+  font-size:clamp(15px, 1.7vw, 18px);
+  line-height:1.6;
+}
+
+body.home .home-grid{
+  width:min(920px, 92vw);
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap:18px;
+}
+
+body.home .home-card{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  text-decoration:none;
+  color:var(--fg);
+  text-align:left;
+  padding:26px 24px;
+  min-height:140px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.32);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 18px 70px rgba(0,0,0,.45);
+  transition: transform .2s ease, border-color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+body.home .home-card:hover,
+body.home .home-card:focus-visible{
+  transform: translateY(-4px);
+  border-color: rgba(210,228,255,.42);
+  background: rgba(8,16,28,.45);
+  box-shadow: 0 22px 90px rgba(0,0,0,.55);
+  outline:none;
+}
+
+body.home .home-card-label{
+  font:12px/1.2 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+  letter-spacing:.42em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+body.home .home-card-subtitle{
+  font-size:28px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+}
+
+@media (max-width: 900px){
+  body.home .home-hub{
+    transform: translateY(6vh);
+    gap:22px;
+  }
+
+  body.home .home-grid{
+    grid-template-columns: 1fr;
+    gap:16px;
+  }
+
+  body.home .home-card{
+    padding:22px 20px;
   }
 }
 
