@@ -6,17 +6,152 @@
   <title>MYTH — NE3ULA</title>
   <link rel="stylesheet" href="/shared/styles.css" />
   <script src="/shared/app.js" defer></script>
+  <style>
+    .lore-shell {
+      width: min(980px, 92vw);
+      text-align: left;
+      display: grid;
+      gap: 18px;
+      cursor: default;
+    }
+
+    .lore-subline {
+      margin: 0;
+      font: 12px/1.2 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .lore-section h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .lore-section p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .lore-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .lore-mini {
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 12px;
+      background: rgba(0,0,0,.24);
+      padding: 12px 14px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .lore-mini h3 {
+      margin: 0;
+      font-size: 13px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .lore-mini p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 8px;
+    }
+
+    .timeline-row {
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 12px;
+      background: rgba(0,0,0,.2);
+      padding: 10px 12px;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 12px;
+      align-items: start;
+    }
+
+    .timeline-row .label {
+      font: 12px/1.2 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--fg);
+    }
+
+    .timeline-row .value {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .nav-current {
+      opacity: .7;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    @media (max-width: 720px) {
+      .lore-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timeline-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+  </style>
 </head>
 <body>
   <main class="wrap">
-    <div class="card">
-      <div class="kicker">NE3ULA</div>
-      <h1>MYTH</h1>
-      <p>Placeholder page.</p>
+    <div class="card lore-shell">
+      <section class="lore-section">
+        <h1>MYTH</h1>
+
+        <h2>The Space Between</h2>
+        <p>NE3ULA is the empty space between the noise.</p>
+        <p>The raw, chaotic building blocks of existence.<br />Unformed. Unjudged. Unclaimed.</p>
+        <p>It is where awareness returns<br />and chaos can be shaped into beauty.</p>
+        <p>NE3ULA is not the structure.<br />It is the field in which structure becomes possible.</p>
+
+        <hr />
+
+        <h2>From Chaos to Creation</h2>
+        <p>Chaos is not the enemy.<br />It is material.</p>
+        <p>Emotion. Memory. Fear. Desire.<br />Frequency. Pattern. Energy.</p>
+        <p>All of it can be composed.</p>
+        <p>That is where legend begins.</p>
+
+        <hr />
+
+        <h2>The Architecture of Becoming</h2>
+        <p>NE3ULA is the space.<br />Myth is the meaning.<br />AXZIO is the interface.<br />E3 is the engine.</p>
+        <p>Each layer shapes the next.</p>
+        <p>And all of it begins with space.</p>
+
+        <hr />
+
+        <h2>Live Your Legend</h2>
+        <p>NE3ULA does not define you.</p>
+        <p>It gives the space and framework<br />so you can decide who you are becoming.</p>
+        <p>What legend will you choose?</p>
+      </section>
 
       <div class="nav">
         <a class="btn" href="/music">MUSIC</a>
-                <a class="btn" href="/axzio">AXZIO</a>
+        <span class="btn nav-current" aria-current="page">MYTH</span>
+        <a class="btn" href="/axzio">AXZIO</a>
         <a class="btn" href="/engine">E3</a>
       </div>
     </div>
