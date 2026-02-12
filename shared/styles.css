@@ -102,6 +102,22 @@ p{
   color:rgba(255,255,255,.45);
 }
 
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card-link:hover .card {
+  transform: translateY(-6px);
+  transition: 0.3s ease;
+}
+
+.card {
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
 /* Make the main overlay feel like a floating HUD instead of a blocker */
 body[data-page="home"] .wrap{
   min-height:100vh;
