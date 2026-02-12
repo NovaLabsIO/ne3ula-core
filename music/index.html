@@ -7,31 +7,243 @@
 
   <link rel="stylesheet" href="/shared/styles.css" />
   <script src="/shared/app.js" defer></script>
+  <style>
+    body.music {
+      background:
+        radial-gradient(circle at 50% 40%, rgba(120,80,255,0.2), transparent 58%),
+        radial-gradient(circle at 82% 24%, rgba(0,200,255,0.12), transparent 50%),
+        linear-gradient(180deg, #05050a 0%, #0b0c16 100%);
+      background-attachment: fixed;
+    }
+
+    body.music .wrap {
+      min-height: auto;
+      padding: clamp(28px, 5vh, 58px) 6vw 110px;
+      display: block;
+      text-align: left;
+    }
+
+    .music-shell {
+      width: min(1080px, 92vw);
+      margin: 0 auto;
+      display: grid;
+      gap: 18px;
+      cursor: default;
+    }
+
+    .music-header h1 {
+      margin: .55rem 0 .2rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .music-subline {
+      margin: 0;
+      font: 12px/1.2 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .music-section h2 {
+      margin: 0 0 12px;
+      font-size: 20px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .music-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .music-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .music-item {
+      padding: 16px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.24);
+      display: grid;
+      gap: 10px;
+      align-content: start;
+    }
+
+    .music-item h3 {
+      margin: 0;
+      font-size: 16px;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .music-item p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .music-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .music-note {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .music-bullets {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .music-bullets li {
+      margin: 0;
+    }
+
+    .music-muted {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 980px) {
+      .music-grid,
+      .music-row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
-<body>
+<body class="music">
+  <main class="wrap">
+    <div class="music-shell">
+      <section class="card music-header">
+        <div class="kicker">NE3ULA</div>
+        <h1>MUSIC</h1>
+        <p class="music-subline">Signal</p>
+        <div class="nav">
+          <a class="btn" href="/home">HOME</a>
+          <a class="btn" href="/music">MUSIC</a>
+          <a class="btn" href="/myth">MYTH</a>
+          <a class="btn" href="/engine">E3</a>
+          <a class="btn" href="/axzio">AXZIO</a>
+        </div>
+      </section>
 
-  <div class="stage" style="background-image:url('/assets/home/bg-home.png')"></div>
+      <section class="card music-section">
+        <h2>Featured Releases</h2>
+        <div class="music-grid">
+          <article class="music-item">
+            <h3>3EL1EVE 1N</h3>
+            <p>2025</p>
+            <div class="music-links">
+              <a class="btn" href="https://on.soundcloud.com/OIDQedzMpl7aZ7PctX" target="_blank" rel="noopener noreferrer">Listen</a>
+            </div>
+          </article>
+          <article class="music-item">
+            <h3>LIKE THAT</h3>
+            <p>2025</p>
+            <div class="music-links">
+              <a class="btn" href="https://on.soundcloud.com/hwoKpAxxNgVRt0pUEi" target="_blank" rel="noopener noreferrer">Listen</a>
+            </div>
+          </article>
+          <article class="music-item">
+            <h3>LIKE THAT {VIP}</h3>
+            <p>2026</p>
+            <div class="music-links">
+              <a class="btn" href="https://on.soundcloud.com/JHRePt8uKfb8F2fuJA" target="_blank" rel="noopener noreferrer">Listen</a>
+            </div>
+          </article>
+        </div>
+        <p class="music-note">
+          <a class="btn" href="https://soundcloud.com/ne3ula" target="_blank" rel="noopener noreferrer">SoundCloud Home</a>
+        </p>
+      </section>
 
-  <div class="wrap">
-    <div class="card">
-      <div class="kicker">NE3ULA</div>
-      <h1>music</h1>
-      <p>Placeholder content. Replace with final experience.</p>
+      <section class="card music-section">
+        <h2>Live</h2>
+        <div class="music-row">
+          <article class="music-item">
+            <h3>Twitch Live</h3>
+            <div class="music-links">
+              <a class="btn" href="https://www.twitch.tv/ne3ula_db" target="_blank" rel="noopener noreferrer">Watch</a>
+              <a class="btn" href="https://www.twitch.tv/ne3ula_db/schedule" target="_blank" rel="noopener noreferrer">Schedule</a>
+            </div>
+          </article>
+          <article class="music-item">
+            <h3>DJ Sets / Mix Archive</h3>
+            <div class="music-links">
+              <a class="btn" href="https://www.youtube.com/@ne3ula_db" target="_blank" rel="noopener noreferrer">Open</a>
+            </div>
+          </article>
+          <article class="music-item">
+            <h3>Next Stream</h3>
+            <p>TBA</p>
+          </article>
+        </div>
+        <p class="music-note">Clips (Coming Soon) · Past Streams (Coming Soon)</p>
+      </section>
 
-      <div class="nav">
-        <a class="btn" href="/home">Home</a>
-        <a class="btn" href="/music">Music</a>
-        <a class="btn" href="/lore">Lore</a>
-        <a class="btn" href="/axzio">AXZIO</a>
-        <a class="btn" href="/e3">E3</a>
-      </div>
+      <section class="card music-section">
+        <h2>Education</h2>
+        <article class="music-item">
+          <h3>Tutorials / Production</h3>
+          <div class="music-links">
+            <a class="btn" href="https://www.youtube.com/@ne3ula_db" target="_blank" rel="noopener noreferrer">Open</a>
+          </div>
+          <p class="music-muted">Playlist coming soon</p>
+        </article>
+      </section>
+
+      <section class="card music-section">
+        <h2>Services</h2>
+        <div class="music-row">
+          <article class="music-item">
+            <h3>Fiverr - EDM Mix Polish</h3>
+            <div class="music-links">
+              <a class="btn" href="https://pro.fiverr.com/s/DBAAd0P" target="_blank" rel="noopener noreferrer">Open</a>
+            </div>
+          </article>
+          <article class="music-item">
+            <h3>Future Systems</h3>
+            <ul class="music-bullets">
+              <li>Custom tools • performance systems • workflow automations</li>
+              <li>(Coming Soon)</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="card music-section">
+        <h2>Products</h2>
+        <div class="music-row">
+          <article class="music-item">
+            <h3>NE3ULA Hats</h3>
+            <p>$50</p>
+            <p class="music-muted">(Coming Soon)</p>
+          </article>
+          <article class="music-item">
+            <h3>Sample Packs</h3>
+            <p class="music-muted">(Coming Soon)</p>
+          </article>
+        </div>
+      </section>
     </div>
-  </div>
+  </main>
 
   <div class="footer">
     <span>© NE3ULA</span>
     <span>LIVE YOUR LEGEND</span>
   </div>
-
 </body>
 </html>
